@@ -12,9 +12,9 @@ const HandleTickets = () => {
     try {
       const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/updateStatus`, {
         method: "POST",
-        //   headers: {
-        //     'Content-Type': 'application/json',
-        //   },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({ id: id, status: newStatus }),
       });
 

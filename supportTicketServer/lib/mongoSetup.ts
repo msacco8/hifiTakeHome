@@ -6,14 +6,14 @@ let cachedClient: MongoClient | null = null;
 let cachedDb: any = null;
 
 async function mongoConnection() {
-  // Reuse connection if cached   
+  // Reuse connection if cached
   if (cachedClient && cachedDb) {
     return { client: cachedClient, db: cachedDb };
   }
 
-  // Connect to database   
+  // Connect to database
   const client = new MongoClient(uri);
-  await client.connect();   
+  await client.connect();
   const dbName = new URL(uri).pathname.substring(1);
   const db = client.db(dbName);
 

@@ -11,21 +11,21 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
   );
 
-  // Ensure pre-flight request passes   
+  // Ensure pre-flight request passes
   if (req.method === "OPTIONS") {
     return res.status(200).end();
   }
 
   if (req.method === "POST") {
     try {
-      // Connect to database   
+      // Connect to database
       const { db } = await mongoConnection();
 
       // Deconstruct request body and create ticket
       const { body } = req;
       const newTicket = new TicketModel({ ...JSON.parse(body) });
 
-      // Insert ticket into database   
+      // Insert ticket into database
       const response = await db.collection("supportTickets").insertOne(newTicket);
       return res.status(201).json(response);
     } catch (error) {

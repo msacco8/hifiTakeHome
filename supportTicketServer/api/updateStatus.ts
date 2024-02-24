@@ -18,7 +18,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
 
   if (req.method === "POST") {
     try {
-      // Connect to database and attempt to update ticket status   
+      // Connect to database and attempt to update ticket status
       const { db } = await mongoConnection();
       const { id, status } = JSON.parse(req.body);
       const objectId = ObjectId.createFromHexString(id);
