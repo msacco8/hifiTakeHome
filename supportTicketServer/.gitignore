@@ -1,5 +1,6 @@
 .vercel
 .env
+.vercel.json
 
 # Logs
 logs
@@ -14,6 +15,7 @@ node_modules
 dist
 dist-ssr
 *.local
+
 
 # Editor directories and files
 .vscode/*
