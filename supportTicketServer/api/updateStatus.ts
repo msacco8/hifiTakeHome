@@ -22,9 +22,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
       const { db } = await mongoConnection();
       const { id, status } = req.body;
       const objectId = ObjectId.createFromHexString(id);
-      console.log("got here before update of database")
       const response = await db.collection("supportTickets").updateOne({ _id: objectId }, { $set: { status: status } });
-      console.log("got here")
 
       // Return error if nothing is modified
       if (response.modifiedCount === 0) {

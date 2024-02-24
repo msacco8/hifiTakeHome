@@ -23,7 +23,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
 
       // Deconstruct request body and create ticket
       const { body } = req;
-      const newTicket = new TicketModel({ ...JSON.parse(body) });
+      const newTicket = new TicketModel({ ...body });
 
       // Insert ticket into database
       const response = await db.collection("supportTickets").insertOne(newTicket);
