@@ -22,7 +22,8 @@ const HandleTickets = () => {
         throw new Error(`Error: ${response.statusText}`);
       }
 
-      await response.json();
+      const result = await response.json();
+      console.log(result)
       setTickets(tickets.map((ticket: Ticket) => (ticket._id === id ? { ...ticket, status: newStatus } : ticket)));
     } catch (error) {
       console.error("Failed to update ticket:", error);
@@ -33,7 +34,6 @@ const HandleTickets = () => {
   const fetchTickets = async () => {
     try {
       const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/getTickets`);
-      console.log(response)
       if (!response.ok) {
         throw new Error(`Error: ${response.statusText}`);
       }
@@ -41,14 +41,8 @@ const HandleTickets = () => {
       if (!contentType || !contentType.includes('application/json')) {
           throw new TypeError("Response is not JSON");
       }
-      console.log("before ticketData")
-      console.log(response.body)
       const ticketData = await response.json();
-      console.log("after ticketData")
-    //   console.log(response.body!.json())
-    //   console.log(ticketData)
       setTickets(ticketData);
-      console.log("got here")
     } catch (error) {
       console.error("Failed to fetch ticket data:", error);
     }
