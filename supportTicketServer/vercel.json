@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "env": {
+    "MONGODB_URI": "mongodb+srv://sacco815:4hgZJGQocoH7bjOi@hifitakehome.rkgctyg.mongodb.net/?retryWrites=true&w=majority&appName=hifiTakeHome"
+  }
+}

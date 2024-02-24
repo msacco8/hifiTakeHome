@@ -1,0 +1,93 @@
+.ticketsContainer {
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 70vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: auto;
+  background-color: #f9f9f9;
+}
+
+.ticketCard {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 10px;
+  width: 48vw;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.senderInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cardInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ticketCard p {
+  font-size: 16px;
+  color: black;
+  margin-bottom: 0px;
+}
+
+.ticketCard h1 {
+  margin: 0px;
+}
+
+.ticketCard select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  outline: none;
+  cursor: pointer;
+}
+
+.statusSelect {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.responseButton {
+  background-color: #001399;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.responseButton:hover {
+  background-color: blue;
+}
+
+.infoField {
+  margin: 0px;
+}
+
+.ticketsContainer::-webkit-scrollbar {
+  width: 10px;
+}
+
+.ticketsContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.ticketsContainer::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.ticketsContainer::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
